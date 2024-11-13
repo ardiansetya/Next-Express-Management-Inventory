@@ -1,0 +1,67 @@
+#  SYSTEM SUMMARY
+GET http://localhost:3001/
+Accept: application/json
+
+# ITEMS
+
+### Get all items
+GET http://localhost:3001/api/items
+Accept: application/json
+
+### Create a new item
+POST http://localhost:3001/api/items
+Content-Type: application/json
+
+{
+  "name": "Item low3",
+  "description": "Deskripsi item baru",
+  "price": 50000.00,
+  "quantity": 4,
+  "categoryId": 1,
+  "supplierId": 1,
+  "createdBy": 1
+}
+### items summary
+GET http://localhost:3001/api/items/summary
+Accept: application/json
+
+### items low stock (dibawah 5)
+GET http://localhost:3001/api/items/low-stock
+Accept: application/json
+
+
+# CATEGORIES
+
+### get all categories
+GET http://localhost:3001/api/categories
+Accept: application/json
+
+### create category
+POST http://localhost:3001/api/categories
+Content-Type: application/json
+
+{
+  "name": "minuman",
+  "description": "All minuman items",
+  "createdBy": 1
+}
+
+### get category by id
+GET http://localhost:3001/api/category/1
+Accept: application/json
+
+### get summary by category
+GET http://localhost:3001/api/items/category-summary
+Accept: application/json
+
+### create admin
+POST http://localhost:3001/api/admin
+Content-Type: application/json
+
+{
+  "username": "adminUser1",
+  "password": "securePassword123",
+  "email": "admin1@example.com"
+}
+
+
